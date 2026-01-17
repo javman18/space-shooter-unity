@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using SpaceShooter.Systems;
 using SpaceShooter.Gameplay.Projectiles;
@@ -21,6 +22,9 @@ namespace SpaceShooter.Gameplay.Weapons
         [SerializeField] private PlayerInput playerInput;
 
         private float _cooldown;
+
+        public Action ShotFired;
+
         public void SetPool(PoolService pool) => _pool = pool;
     
         private void Update()
@@ -37,11 +41,12 @@ namespace SpaceShooter.Gameplay.Weapons
         private void Fire()
         {
             if (_pool == null || bulletPrefab == null || firePoint == null) return;
-
             var go = _pool.Spawn(bulletPrefab, firePoint.position, firePoint.rotation);
             var bullet = go.GetComponent<Bullet>();
             if (bullet != null)
                 bullet.Init(_pool, bulletPrefab, bulletSpeed);
+            ShotFired?.Invoke();
+
         }
     }
 }
