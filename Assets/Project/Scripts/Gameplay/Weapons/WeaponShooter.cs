@@ -1,6 +1,7 @@
 using UnityEngine;
 using SpaceShooter.Systems;
 using SpaceShooter.Gameplay.Projectiles;
+using SpaceShooter.Gameplay.Player;
 
 namespace SpaceShooter.Gameplay.Weapons
 {
@@ -17,6 +18,8 @@ namespace SpaceShooter.Gameplay.Weapons
         [Header("Services")]
         [SerializeField] private PoolService _pool;
 
+        [SerializeField] private PlayerInput playerInput;
+
         private float _cooldown;
         public void SetPool(PoolService pool) => _pool = pool;
     
@@ -24,7 +27,7 @@ namespace SpaceShooter.Gameplay.Weapons
         {
             _cooldown -= Time.deltaTime;
 
-            if (Input.GetButton("Fire1") && _cooldown <= 0f)
+            if (playerInput.Fire && _cooldown <= 0f)
             {
                 Fire();
                 _cooldown = 1f / fireRate;

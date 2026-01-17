@@ -18,6 +18,9 @@ namespace SpaceShooter.Systems
         private float _timer;
         private Camera _cam;
 
+        private bool _enabled = true;
+        public void SetEnabled(bool enabled) => _enabled = enabled;
+
         public void SetPool(PoolService pool) => _pool = pool;
 
         private void Awake()
@@ -27,6 +30,8 @@ namespace SpaceShooter.Systems
 
         private void Update()
         {
+            if (!_enabled) return;
+
             if (_pool == null || enemyPrefab == null) return;
 
             _timer -= Time.deltaTime;

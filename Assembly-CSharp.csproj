@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Assets/Project/Scripts/Utils/Interfaces/IPoolable.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Player/PlayerMovement.cs" />
+    <Compile Include="Assets/Project/Scripts/Core/GameState.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Enemies/EnemyMovement.cs" />
     <Compile Include="Assets/Project/Scripts/Systems/PoolService.cs" />
     <Compile Include="Assets/Project/Scripts/Core/SceneInstaller.cs" />
@@ -78,7 +79,10 @@
     <Compile Include="Assets/Project/Scripts/Utils/Interfaces/IDamageable.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Combat/DamageOnTrtigger.cs" />
     <Compile Include="Assets/Project/Scripts/Utils/Interfaces/IInputProvider.cs" />
+    <Compile Include="Assets/Project/Scripts/Core/SceneReloader.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Player/PlayerInput.cs" />
+    <Compile Include="Assets/Project/Scripts/Core/GameManager.cs" />
+    <Compile Include="Assets/Project/Scripts/UI/GameUIController.cs" />
     <Compile Include="Assets/Project/Scripts/Utils/Interfaces/IHasDeathEvent.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Projectiles/Bullet.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Weapons/WeaponShooter.cs" />
