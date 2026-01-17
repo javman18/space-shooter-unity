@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5386861782291403748}
   - component: {fileID: 496975361171040262}
   - component: {fileID: 9038239203182980753}
+  - component: {fileID: -124223423845286439}
   m_Layer: 0
   m_Name: EnemyBasic
   m_TagString: Untagged
@@ -181,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab77d83da2ee446f989b0dd4b9879fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 3
+  maxHp: 40
 --- !u!114 &496975361171040262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,3 +210,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 5386861782291403748}
   despawnOnExit: {fileID: 496975361171040262}
+--- !u!114 &-124223423845286439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6558162810854091689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcef82585e634d99b3eb655d06c62a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

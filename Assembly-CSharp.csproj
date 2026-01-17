@@ -73,6 +73,7 @@
     <Compile Include="Assets/Project/Scripts/Gameplay/Enemies/Enemy.cs" />
     <Compile Include="Assets/Project/Scripts/Systems/EnemySpawner.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Combat/Health.cs" />
+    <Compile Include="Assets/Project/Scripts/Gameplay/Player/PlayerDeathHandler.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Common/DespawnOnCameraExit.cs" />
     <Compile Include="Assets/Project/Scripts/Utils/Interfaces/IDamageable.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Combat/DamageOnTrtigger.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets/Project/Scripts/Utils/Interfaces/IHasDeathEvent.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Projectiles/Bullet.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Weapons/WeaponShooter.cs" />
+    <Compile Include="Assets/Project/Scripts/Gameplay/Common/ParallaxLayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

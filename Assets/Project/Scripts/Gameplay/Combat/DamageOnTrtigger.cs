@@ -10,7 +10,11 @@ namespace SpaceShooter.Gameplay.Combat
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.TryGetComponent<IDamageable>(out var damageable))
+            {
                 damageable.TakeDamage(damage);
+                Debug.Log("Colision con " + other.name);
+            }
+                
         }
     }
 }
