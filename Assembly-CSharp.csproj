@@ -72,6 +72,8 @@
     <Compile Include="Assets/Project/Scripts/Systems/PoolService.cs" />
     <Compile Include="Assets/Project/Scripts/Core/SceneInstaller.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Enemies/Enemy.cs" />
+    <Compile Include="Assets/Project/Scripts/UI/PlayerHealthUIBinder.cs" />
+    <Compile Include="Assets/Project/Scripts/UI/HealthBarUI.cs" />
     <Compile Include="Assets/Project/Scripts/Systems/EnemySpawner.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Combat/Health.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Player/PlayerDeathHandler.cs" />
