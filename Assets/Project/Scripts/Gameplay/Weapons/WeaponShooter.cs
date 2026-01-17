@@ -11,20 +11,15 @@ namespace SpaceShooter.Gameplay.Weapons
         [SerializeField] private GameObject bulletPrefab;
 
         [Header("Tuning")]
-        [SerializeField] private float fireRate = 10f; // bullets per second
+        [SerializeField] private float fireRate = 10f; 
         [SerializeField] private float bulletSpeed = 18f;
 
         [Header("Services")]
-        [SerializeField] private PoolService poolService;
+        [SerializeField] private PoolService _pool;
 
         private float _cooldown;
-
-        private void Awake()
-        {
-            if (poolService == null)
-                poolService = FindAnyObjectByType<PoolService>(); // OK por ahora; luego lo inyectamos mejor
-        }
-
+        public void SetPool(PoolService pool) => _pool = pool;
+    
         private void Update()
         {
             _cooldown -= Time.deltaTime;
@@ -38,12 +33,12 @@ namespace SpaceShooter.Gameplay.Weapons
 
         private void Fire()
         {
-            if (poolService == null || bulletPrefab == null || firePoint == null) return;
+            if (_pool == null || bulletPrefab == null || firePoint == null) return;
 
-            var go = poolService.Spawn(bulletPrefab, firePoint.position, firePoint.rotation);
+            var go = _pool.Spawn(bulletPrefab, firePoint.position, firePoint.rotation);
             var bullet = go.GetComponent<Bullet>();
             if (bullet != null)
-                bullet.Init(poolService, bulletPrefab, bulletSpeed);
+                bullet.Init(_pool, bulletPrefab, bulletSpeed);
         }
     }
 }

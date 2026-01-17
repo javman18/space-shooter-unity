@@ -11,7 +11,7 @@ namespace SpaceShooter.Gameplay.Projectiles
 
         private float _t;
         private PoolService _pool;
-        private GameObject _prefabKey; // referencia al prefab para devolver al pool
+        private GameObject _prefabKey; 
 
         public void Init(PoolService pool, GameObject prefabKey, float newSpeed)
         {
@@ -36,5 +36,15 @@ namespace SpaceShooter.Gameplay.Projectiles
                     Destroy(gameObject);
             }
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            
+            if (_pool != null && _prefabKey != null)
+                _pool.Despawn(gameObject, _prefabKey);
+            else
+                Destroy(gameObject);
+        }
+
     }
 }

@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &917553293939506443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8191535721369963245}
+  - component: {fileID: 6316829240109397474}
+  m_Layer: 0
+  m_Name: FirePointR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8191535721369963245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917553293939506443}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.75, y: 0.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 937144730777748572}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6316829240109397474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917553293939506443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088fb57065df34c9587890da892161a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 8191535721369963245}
+  bulletPrefab: {fileID: 7929303938865494535, guid: b5f18344199a94083ba4d8d32ca438f9, type: 3}
+  fireRate: 10
+  bulletSpeed: 18
+  poolService: {fileID: 0}
 --- !u!1 &1214068698494088714
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,8 +58,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8282472539856408386}
+  - component: {fileID: 7990405995056783056}
   m_Layer: 0
-  m_Name: FirePoint
+  m_Name: FirePointL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,12 +75,29 @@ Transform:
   m_GameObject: {fileID: 1214068698494088714}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.596, z: 0}
+  m_LocalPosition: {x: -0.77, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 937144730777748572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7990405995056783056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214068698494088714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088fb57065df34c9587890da892161a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 8282472539856408386}
+  bulletPrefab: {fileID: 7929303938865494535, guid: b5f18344199a94083ba4d8d32ca438f9, type: 3}
+  fireRate: 10
+  bulletSpeed: 18
+  poolService: {fileID: 0}
 --- !u!1 &5703113561179705494
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,7 +112,6 @@ GameObject:
   - component: {fileID: 8309241505418851023}
   - component: {fileID: 680976906404432647}
   - component: {fileID: 2270427140633828865}
-  - component: {fileID: 1089843575028423611}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -67,6 +133,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8282472539856408386}
+  - {fileID: 8191535721369963245}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4528661237670395595
@@ -113,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6bdc55fa15037804eb4bf073c9a71238, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,17 +252,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0061149597, y: -0.061149538}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.7460246, y: 1.6848751}
   m_EdgeRadius: 0
 --- !u!114 &680976906404432647
 MonoBehaviour:
@@ -223,20 +290,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   screenPadding: 0.5
---- !u!114 &1089843575028423611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5703113561179705494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 088fb57065df34c9587890da892161a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 8282472539856408386}
-  bulletPrefab: {fileID: 7929303938865494535, guid: b5f18344199a94083ba4d8d32ca438f9, type: 3}
-  fireRate: 10
-  bulletSpeed: 18
-  poolService: {fileID: 0}
