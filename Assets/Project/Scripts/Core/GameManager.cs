@@ -10,7 +10,8 @@ namespace SpaceShooter.Core
 
         private void Start()
         {
-            SetState(GameState.Playing);
+            Time.timeScale = 0f;
+            SetState(GameState.MainMenu);
         }
 
         public void SetState(GameState newState)
@@ -30,6 +31,11 @@ namespace SpaceShooter.Core
             else if (State == GameState.Paused) SetState(GameState.Playing);
         }
 
+        public void StartGame()
+        {
+            Time.timeScale = 1f;
+            SetState(GameState.Playing);
+        }
 
         public void GameOver()
         {
