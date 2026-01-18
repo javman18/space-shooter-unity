@@ -28,7 +28,7 @@ namespace SpaceShooter.Gameplay.Common
             _pool = pool;
             _prefabKey = prefabKey;
 
-            transform.position = pos + Random.insideUnitSphere * 0.15f;
+            transform.position = pos + Random.insideUnitSphere * 1f;
             transform.localScale = _baseScale * popScale;
 
             text.text = $"+{amount}";

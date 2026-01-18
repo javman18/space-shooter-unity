@@ -17,7 +17,7 @@ namespace SpaceShooter.UI
         private void Awake()
         {
             Build();
-            SetHealth(maxPills);
+            
         }
 
         public void Build()
@@ -48,11 +48,13 @@ namespace SpaceShooter.UI
                 _pills[i].color = i < clamped ? onColor : offColor;
         }
 
-        public void SetMax(int newMax)
+        public void SetMax(int newMax, int current)
         {
             maxPills = Mathf.Max(1, newMax);
             Build();
+            SetHealth(current);
         }
+
     }
 }
 
