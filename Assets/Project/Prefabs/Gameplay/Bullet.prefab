@@ -168,6 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 18
   lifetime: 2
+  impactPrefab: {fileID: 4166904130140732166, guid: b021dfd8b70e8414f8f51ab9bb462d92, type: 3}
+  impactLifetime: 0.18
 --- !u!114 &3872686883750373733
 MonoBehaviour:
   m_ObjectHideFlags: 0

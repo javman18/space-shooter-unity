@@ -110,7 +110,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2257599771943173431}
   - component: {fileID: 7593196069009610764}
-  - component: {fileID: 1406048919725786445}
   - component: {fileID: 5351933743268145982}
   m_Layer: 0
   m_Name: Visuals
@@ -189,21 +188,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1406048919725786445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520719957296753511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b55818542a4b94aafa97daa258b0d650, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 6867542725124507077}
-  punchScale: 0.18
-  returnSpeed: 14
 --- !u!114 &5351933743268145982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +224,9 @@ GameObject:
   - component: {fileID: 6867542725124507077}
   - component: {fileID: 245181207913092595}
   - component: {fileID: 6876285812690316486}
-  - component: {fileID: 924075980872112913}
+  - component: {fileID: 8587467120982479614}
+  - component: {fileID: 1966950023726500758}
+  - component: {fileID: 2191387891170764988}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -406,7 +392,7 @@ MonoBehaviour:
   health: {fileID: 6867542725124507077}
   ui: {fileID: 0}
   uIShake: {fileID: 0}
---- !u!114 &924075980872112913
+--- !u!114 &8587467120982479614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,14 +401,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 5703113561179705494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2f6802998b3b4c1bbc7006e1b6f6dfb, type: 3}
+  m_Script: {fileID: 11500000, guid: 29637df8d3c6944c897238efbbf1ce96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breathingAmount: 0.03
-  breathingSpeed: 2
-  input: {fileID: 680976906404432647}
-  tiltAmount: 12
-  tiltSpeed: 10
-  weaponShooter: {fileID: 7990405995056783056}
-  recoilAmount: 0.05
-  recoilReturn: 14
+  health: {fileID: 6867542725124507077}
+  punch: {fileID: 2191387891170764988}
+  flash: {fileID: 1966950023726500758}
+--- !u!114 &1966950023726500758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703113561179705494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e580f9cc35e3740a7a1ddb0df56f4060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 7593196069009610764}
+  duration: 0.06
+--- !u!114 &2191387891170764988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703113561179705494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9847a090d88f5493aab157c347d5dab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punch: 0.12
+  returnSpeed: 18
