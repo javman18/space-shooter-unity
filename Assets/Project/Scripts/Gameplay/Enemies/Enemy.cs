@@ -10,9 +10,11 @@ namespace SpaceShooter.Gameplay.Enemies
     {
         [SerializeField] private Health health;
         [SerializeField] private DespawnOnCameraExit despawnOnExit;
+        [SerializeField] private EnemyDeathFeedback deathFeedback;
 
         private PoolService _pool;
         private GameObject _prefabKey;
+        private bool _dying;
 
         public void Init(PoolService pool, GameObject prefabKey, int hp)
         {
@@ -24,6 +26,8 @@ namespace SpaceShooter.Gameplay.Enemies
 
             if (health != null)
                 health.ResetHp(hp);
+
+            _dying = false;
         }
 
         private void OnEnable()
@@ -40,13 +44,32 @@ namespace SpaceShooter.Gameplay.Enemies
 
         private void HandleDeath()
         {
+            if (_dying) return;
+            _dying = true;
+
+            if (deathFeedback != null)
+            {
+                deathFeedback.Play(Despawn);
+            }
+            else
+            {
+                Despawn();
+            }
+        }
+
+        private void Despawn()
+        {
             if (_pool != null && _prefabKey != null)
                 _pool.Despawn(gameObject, _prefabKey);
             else
                 gameObject.SetActive(false);
         }
 
-        public void OnSpawned() { }
+        public void OnSpawned()
+        {
+            _dying = false;
+        }
+
         public void OnDespawned() { }
     }
 }

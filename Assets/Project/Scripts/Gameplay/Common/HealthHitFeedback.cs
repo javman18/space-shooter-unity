@@ -1,6 +1,7 @@
 using UnityEngine;
 using SpaceShooter.Gameplay.Combat;
 using SpaceShooter.Systems;
+using SpaceShooter.Systems.Audio;
 
 namespace SpaceShooter.Gameplay.Common
 {
@@ -19,6 +20,8 @@ namespace SpaceShooter.Gameplay.Common
 
         private HitStopService hitStop;
         private int _lastHp;
+
+        [SerializeField] private AudioClip hitSound;
 
         private void Awake()
         {
@@ -56,7 +59,7 @@ namespace SpaceShooter.Gameplay.Common
 
                 shake?.Shake(shakeStrength, shakeDuration);
             }
-
+            SfxService.Instance.Play(hitSound);
             _lastHp = current;
         }
 

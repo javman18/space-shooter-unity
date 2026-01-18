@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 8949109260642962592}
   - component: {fileID: 6567433274889166522}
   - component: {fileID: 8689027827465538278}
+  - component: {fileID: 6068996342387831145}
   m_Layer: 0
   m_Name: EnemyBasic
   m_TagString: Untagged
@@ -245,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 5386861782291403748}
   despawnOnExit: {fileID: 496975361171040262}
+  deathFeedback: {fileID: 6068996342387831145}
 --- !u!114 &-124223423845286439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +279,7 @@ MonoBehaviour:
   hitStopDuration: 0.03
   shakeStrength: 0.07
   shakeDuration: 0.05
+  hitSound: {fileID: 8300000, guid: 91fd877dbf35d439691ffa62f36b687d, type: 3}
 --- !u!114 &6567433274889166522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,3 +308,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 3985591934946816892}
   duration: 0.06
+--- !u!114 &6068996342387831145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6558162810854091689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4f349e666374ce589e1a59ff1f30fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visuals: {fileID: 2576466504691315677}
+  inflateAmount: 1.25
+  inflateTime: 0.08
+  popDelay: 0.02

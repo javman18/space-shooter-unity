@@ -3,6 +3,7 @@ using UnityEngine;
 using SpaceShooter.Systems;
 using SpaceShooter.Gameplay.Projectiles;
 using SpaceShooter.Gameplay.Player;
+using SpaceShooter.Systems.Audio;
 
 namespace SpaceShooter.Gameplay.Weapons
 {
@@ -45,6 +46,7 @@ namespace SpaceShooter.Gameplay.Weapons
             var bullet = go.GetComponent<Bullet>();
             if (bullet != null)
                 bullet.Init(_pool, bulletPrefab, bulletSpeed);
+            SfxService.Instance.PlayShot();
             ShotFired?.Invoke();
 
         }
