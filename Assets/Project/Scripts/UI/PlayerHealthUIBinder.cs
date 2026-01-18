@@ -7,6 +7,10 @@ namespace SpaceShooter.UI
     {
         [SerializeField] private Health health;
         [SerializeField] private HealthBarUI ui;
+        [SerializeField] private UIShake uIShake;
+
+
+        private int _lastHP;
 
         private void Awake()
         {
@@ -15,6 +19,7 @@ namespace SpaceShooter.UI
             ui.SetMax(health.Max);
             ui.SetHealth(health.CurrentHp);
 
+            _lastHP = health.CurrentHp;
             health.Changed += OnChanged;
         }
 
@@ -26,6 +31,10 @@ namespace SpaceShooter.UI
         private void OnChanged(int current, int max)
         {
             ui.SetHealth(current);
+            if (current < _lastHP && uIShake != null)
+                uIShake.Shake(0.15f, 6f);
+
+            _lastHP = current;
         }
     }
 }

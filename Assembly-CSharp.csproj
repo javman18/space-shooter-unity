@@ -74,6 +74,7 @@
     <Compile Include="Assets/Project/Scripts/Gameplay/Enemies/Enemy.cs" />
     <Compile Include="Assets/Project/Scripts/UI/PlayerHealthUIBinder.cs" />
     <Compile Include="Assets/Project/Scripts/UI/HealthBarUI.cs" />
+    <Compile Include="Assets/Project/Scripts/UI/UIShake.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Player/PlayerVisualFeedback.cs" />
     <Compile Include="Assets/Project/Scripts/Systems/EnemySpawner.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Combat/Health.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets/Project/Scripts/Utils/Interfaces/IDamageable.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Combat/DamageOnTrtigger.cs" />
     <Compile Include="Assets/Project/Scripts/Utils/Interfaces/IInputProvider.cs" />
+    <Compile Include="Assets/Project/Scripts/Gameplay/Player/PlayerHitFeedback.cs" />
     <Compile Include="Assets/Project/Scripts/Core/SceneReloader.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Player/PlayerInput.cs" />
     <Compile Include="Assets/Project/Scripts/Core/GameManager.cs" />

@@ -50,9 +50,6 @@ MonoBehaviour:
   bulletSpeed: 18
   _pool: {fileID: 0}
   playerInput: {fileID: 680976906404432647}
-  recoilTarget: {fileID: 0}
-  recoilAmount: 0.06
-  recoilReturn: 12
 --- !u!1 &1214068698494088714
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,9 +100,6 @@ MonoBehaviour:
   bulletSpeed: 18
   _pool: {fileID: 0}
   playerInput: {fileID: 680976906404432647}
-  recoilTarget: {fileID: 0}
-  recoilAmount: 0.06
-  recoilReturn: 12
 --- !u!1 &1520719957296753511
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +110,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2257599771943173431}
   - component: {fileID: 7593196069009610764}
+  - component: {fileID: 1406048919725786445}
+  - component: {fileID: 5351933743268145982}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -193,6 +189,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1406048919725786445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520719957296753511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b55818542a4b94aafa97daa258b0d650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 6867542725124507077}
+  punchScale: 0.18
+  returnSpeed: 14
+--- !u!114 &5351933743268145982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520719957296753511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f6802998b3b4c1bbc7006e1b6f6dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breathingAmount: 0.03
+  breathingSpeed: 2
+  input: {fileID: 680976906404432647}
+  tiltAmount: 12
+  tiltSpeed: 10
+  weaponShooter: {fileID: 7990405995056783056}
+  recoilAmount: 0.05
+  recoilReturn: 14
 --- !u!1 &5703113561179705494
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 6867542725124507077}
   ui: {fileID: 0}
+  uIShake: {fileID: 0}
 --- !u!114 &924075980872112913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +418,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f6802998b3b4c1bbc7006e1b6f6dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visuals: {fileID: 937144730777748572}
-  scaleAmount: 0.03
-  speed: 2
+  breathingAmount: 0.03
+  breathingSpeed: 2
+  input: {fileID: 680976906404432647}
+  tiltAmount: 12
+  tiltSpeed: 10
+  weaponShooter: {fileID: 7990405995056783056}
+  recoilAmount: 0.05
+  recoilReturn: 14
