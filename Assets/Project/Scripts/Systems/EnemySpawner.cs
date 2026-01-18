@@ -1,5 +1,6 @@
 using UnityEngine;
 using SpaceShooter.Gameplay.Enemies;
+using SpaceShooter.Gameplay.Common;
 
 namespace SpaceShooter.Systems
 {
@@ -56,6 +57,10 @@ namespace SpaceShooter.Systems
             var enemy = go.GetComponent<Enemy>();
             if (enemy != null)
                 enemy.Init(_pool, enemyPrefab, enemyHp, _score);
+            var hitFx = go.GetComponent<HealthHitFeedback>();
+            if (hitFx != null)
+                hitFx.SetScoreService(_score);
+
         }
     }
 }

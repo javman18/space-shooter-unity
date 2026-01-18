@@ -247,6 +247,7 @@ MonoBehaviour:
   health: {fileID: 5386861782291403748}
   despawnOnExit: {fileID: 496975361171040262}
   deathFeedback: {fileID: 6068996342387831145}
+  scoreValue: 100
 --- !u!114 &-124223423845286439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +281,9 @@ MonoBehaviour:
   shakeStrength: 0.07
   shakeDuration: 0.05
   hitSound: {fileID: 8300000, guid: 91fd877dbf35d439691ffa62f36b687d, type: 3}
+  spawnScorePopup: 1
+  scorePerHit: 10
+  scoreService: {fileID: 0}
 --- !u!114 &6567433274889166522
 MonoBehaviour:
   m_ObjectHideFlags: 0

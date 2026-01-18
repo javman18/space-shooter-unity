@@ -14,14 +14,23 @@ namespace SpaceShooter.Gameplay.Common
         [Header("Optional Global Feedback")]
         [SerializeField] private ScreenShake shake;
 
+        [Header("Tuning")]
         [SerializeField] private float hitStopDuration = 0.03f;
         [SerializeField] private float shakeStrength = 0.05f;
         [SerializeField] private float shakeDuration = 0.05f;
 
+        [Header("Audio")]
+        [SerializeField] private AudioClip hitSound;
+
+        [Header("Score Popup (optional)")]
+        [SerializeField] private bool spawnScorePopup;
+        [SerializeField] private int scorePerHit = 10;
+        [SerializeField] private FloatingScoreService scoreService;
+
         private HitStopService hitStop;
         private int _lastHp;
 
-        [SerializeField] private AudioClip hitSound;
+        public void SetScoreService(FloatingScoreService service) => scoreService = service;
 
         private void Awake()
         {
@@ -43,32 +52,37 @@ namespace SpaceShooter.Gameplay.Common
             }
 
             _lastHp = health.CurrentHp;
+
+            health.Changed -= OnChanged;
             health.Changed += OnChanged;
         }
-
-        private void OnChanged(int current, int max)
-        { 
-            Debug.Log("Life changed");
-            if (current < _lastHp)
-            {
-                punch?.Play();
-                flash?.Play();
-
-                if (hitStop == null) hitStop = HitStopService.Instance;
-                hitStop?.Play(hitStopDuration);
-
-                shake?.Shake(shakeStrength, shakeDuration);
-            }
-            SfxService.Instance.Play(hitSound);
-            _lastHp = current;
-        }
-
 
         private void OnDisable()
         {
             if (health != null) health.Changed -= OnChanged;
         }
 
+        private void OnChanged(int current, int max)
+        {
+            if (current >= _lastHp)
+            {
+                _lastHp = current;
+                return;
+            }
 
+            punch?.Play();
+            flash?.Play();
+
+            hitStop?.Play(hitStopDuration);
+            shake?.Shake(shakeStrength, shakeDuration);
+
+            if (hitSound != null)
+                SfxService.Instance?.Play(hitSound, 0.7f);
+
+            if (spawnScorePopup && scoreService != null)
+                scoreService.Show(scorePerHit, transform.position);
+
+            _lastHp = current;
+        }
     }
 }
