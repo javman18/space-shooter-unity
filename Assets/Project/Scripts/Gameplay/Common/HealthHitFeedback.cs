@@ -44,7 +44,8 @@ namespace SpaceShooter.Gameplay.Common
         }
 
         private void OnChanged(int current, int max)
-        {
+        { 
+            Debug.Log("Life changed");
             if (current < _lastHp)
             {
                 punch?.Play();

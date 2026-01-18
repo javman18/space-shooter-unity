@@ -15,18 +15,19 @@ namespace SpaceShooter.Gameplay.Combat
         private void Awake()
         {
             CurrentHp = maxHp;
-            Changed?.Invoke(CurrentHp, maxHp);
+            
         }
 
         public void ResetHp(int hp)
         {
             maxHp = Mathf.Max(1, hp);
             CurrentHp = maxHp;
-            Changed?.Invoke(CurrentHp, maxHp);
+            
         }
 
         public void TakeDamage(int amount)
         {
+            Debug.Log($"Taking {amount} damage");
             if (CurrentHp <= 0) return;
 
             CurrentHp -= Mathf.Max(1, amount);
