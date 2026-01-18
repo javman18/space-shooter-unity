@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08289e7c32768f4ea57cae0acd7fc55, type: 3}
   m_Name: EnemyBasic
   m_EditorClassIdentifier: 
-  baseScore: 10
+  baseScore: 50
   randomRange: 2

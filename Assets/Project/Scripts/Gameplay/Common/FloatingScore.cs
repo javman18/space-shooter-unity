@@ -23,27 +23,31 @@ namespace SpaceShooter.Gameplay.Common
             _baseScale = transform.localScale;
         }
 
-        public void Init(PoolService pool, GameObject prefabKey, Vector3 pos, int amount)
+        public void Init(PoolService pool, GameObject prefabKey, Vector3 pos, int amount, Color color)
         {
             _pool = pool;
             _prefabKey = prefabKey;
 
-            transform.position = pos + Random.insideUnitSphere * 1f;
+            transform.position = pos + (Vector3)Random.insideUnitCircle * 0.25f;
             transform.localScale = _baseScale * popScale;
 
             text.text = $"+{amount}";
+            text.color = color;
             text.alpha = 1f;
 
             _t = 0f;
         }
+
 
         public void OnSpawned() { }
 
         public void OnDespawned()
         {
             text.alpha = 1f;
+            text.color = Color.white;
             transform.localScale = _baseScale;
         }
+
 
         private void Update()
         {

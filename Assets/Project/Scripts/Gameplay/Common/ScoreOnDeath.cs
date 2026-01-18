@@ -9,6 +9,7 @@ namespace SpaceShooter.Gameplay.Common
     {
         [SerializeField] private Health health;
         [SerializeField] private FloatingScoreService scoreService;
+        
         [SerializeField] private ScoreConfig scoreConfig;
 
         public void SetScoreService(FloatingScoreService svc) => scoreService = svc;
@@ -31,7 +32,7 @@ namespace SpaceShooter.Gameplay.Common
         private void OnDied()
         {
             if (scoreService == null || scoreConfig == null) return;
-            scoreService.Show(scoreConfig.Roll(), transform.position);
+            scoreService.ShowDeath(scoreConfig.Roll(), transform.position);
         }
     }
 }

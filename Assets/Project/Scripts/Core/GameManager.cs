@@ -36,6 +36,9 @@ namespace SpaceShooter.Core
             SetState(GameState.GameOver);
         }
 
-        
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }

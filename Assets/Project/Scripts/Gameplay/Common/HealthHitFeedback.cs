@@ -80,7 +80,7 @@ namespace SpaceShooter.Gameplay.Common
                 SfxService.Instance?.Play(hitSound, 0.7f);
 
             if (spawnScorePopup && scoreService != null)
-                scoreService.Show(scorePerHit, transform.position);
+                scoreService.ShowDamage(scorePerHit, transform.position);
 
             _lastHp = current;
         }
