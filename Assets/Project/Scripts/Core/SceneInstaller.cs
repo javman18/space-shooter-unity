@@ -12,6 +12,7 @@ namespace SpaceShooter.Core
     {
         [Header("Services")]
         [SerializeField] private PoolService poolService;
+        [SerializeField] private FloatingScoreService scoreService;
 
         [Header("Gameplay")]
         [SerializeField] private WeaponShooter[] weaponShooters;
@@ -25,7 +26,7 @@ namespace SpaceShooter.Core
         [SerializeField] private GameManager gameManager;
         [SerializeField] private GameUIController ui;
         [SerializeField] private PlayerDeathHandler playerDeath;
-        
+
 
         private IInputProvider _input;
 
@@ -60,7 +61,12 @@ namespace SpaceShooter.Core
 
             if (enemySpawners != null)
                 for (int i = 0; i < enemySpawners.Length; i++)
-                    if (enemySpawners[i] != null) enemySpawners[i].SetPool(poolService);
+                    if (enemySpawners[i] != null)
+                    {
+                        enemySpawners[i].SetPool(poolService);
+                        enemySpawners[i].SetScore(scoreService);
+                    }
+            
 
             HandleState(gameManager != null ? gameManager.State : GameState.Playing);
         }

@@ -84,11 +84,13 @@
     <Compile Include="Assets/Project/Scripts/Gameplay/Common/DespawnOnCameraExit.cs" />
     <Compile Include="Assets/Project/Scripts/Utils/Interfaces/IDamageable.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Combat/DamageOnTrtigger.cs" />
+    <Compile Include="Assets/Project/Scripts/Systems/FloatingScoreService.cs" />
     <Compile Include="Assets/Project/Scripts/Utils/Interfaces/IInputProvider.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Enemies/EnemyDeathFeedback.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Common/HitFlash.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Common/HitPunch.cs" />
     <Compile Include="Assets/Project/Scripts/Core/SceneReloader.cs" />
+    <Compile Include="Assets/Project/Scripts/Gameplay/Common/FloatingScore.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Common/HealthHitFeedback.cs" />
     <Compile Include="Assets/Project/Scripts/Systems/ScreenShake.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Player/PlayerInput.cs" />

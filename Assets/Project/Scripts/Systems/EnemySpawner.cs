@@ -15,6 +15,7 @@ namespace SpaceShooter.Systems
         [SerializeField] private float maxX = 6f;
 
         private PoolService _pool;
+        private FloatingScoreService _score;
         private float _timer;
         private Camera _cam;
 
@@ -22,6 +23,7 @@ namespace SpaceShooter.Systems
         public void SetEnabled(bool enabled) => _enabled = enabled;
 
         public void SetPool(PoolService pool) => _pool = pool;
+        public void SetScore(FloatingScoreService score) => _score = score;
 
         private void Awake()
         {
@@ -53,7 +55,7 @@ namespace SpaceShooter.Systems
            
             var enemy = go.GetComponent<Enemy>();
             if (enemy != null)
-                enemy.Init(_pool, enemyPrefab, enemyHp);
+                enemy.Init(_pool, enemyPrefab, enemyHp, _score);
         }
     }
 }
