@@ -1538,11 +1538,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - prefab: {fileID: 7929303938865494535, guid: b5f18344199a94083ba4d8d32ca438f9, type: 3}
-    prewarmCount: 0
+    prewarmCount: 32
   - prefab: {fileID: 6558162810854091689, guid: 57765a5dc7e92428b83844a5433c940b, type: 3}
-    prewarmCount: 20
+    prewarmCount: 16
   - prefab: {fileID: 4166904130140732166, guid: b021dfd8b70e8414f8f51ab9bb462d92, type: 3}
-    prewarmCount: 0
+    prewarmCount: 24
 --- !u!114 &1170601822 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7990405995056783056, guid: 49b8f03daf3c64009988e9e794af0c5c, type: 3}
@@ -2364,8 +2364,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1706669035}
+  - component: {fileID: 1706669036}
   m_Layer: 0
-  m_Name: ScoreService
+  m_Name: HitStopService
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2386,6 +2387,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 883303789}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1706669036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706669034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b3e3aedb9a9405c933c1ef27047959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1734220951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2788,6 +2801,7 @@ GameObject:
   - component: {fileID: 1916588632}
   - component: {fileID: 1916588631}
   - component: {fileID: 1916588634}
+  - component: {fileID: 1916588635}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2913,6 +2927,19 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1916588635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916588630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8471477cfd71641079c07490d4a9b697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  returnSpeed: 20
 --- !u!114 &2145238991 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6316829240109397474, guid: 49b8f03daf3c64009988e9e794af0c5c, type: 3}
@@ -2992,6 +3019,18 @@ PrefabInstance:
       propertyPath: _pool
       value: 
       objectReference: {fileID: 1156693555}
+    - target: {fileID: 8587467120982479614, guid: 49b8f03daf3c64009988e9e794af0c5c, type: 3}
+      propertyPath: shakeDuration
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587467120982479614, guid: 49b8f03daf3c64009988e9e794af0c5c, type: 3}
+      propertyPath: shakeStrength
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587467120982479614, guid: 49b8f03daf3c64009988e9e794af0c5c, type: 3}
+      propertyPath: hitStopDuration
+      value: 0.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -273,6 +273,10 @@ MonoBehaviour:
   health: {fileID: 5386861782291403748}
   punch: {fileID: 6567433274889166522}
   flash: {fileID: 8689027827465538278}
+  shake: {fileID: 0}
+  hitStopDuration: 0.03
+  shakeStrength: 0
+  shakeDuration: 0
 --- !u!114 &6567433274889166522
 MonoBehaviour:
   m_ObjectHideFlags: 0

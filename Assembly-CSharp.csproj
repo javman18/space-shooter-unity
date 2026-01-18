@@ -75,6 +75,7 @@
     <Compile Include="Assets/Project/Scripts/Gameplay/Common/DespawnAfterTime.cs" />
     <Compile Include="Assets/Project/Scripts/UI/PlayerHealthUIBinder.cs" />
     <Compile Include="Assets/Project/Scripts/UI/HealthBarUI.cs" />
+    <Compile Include="Assets/Project/Scripts/Systems/HitStopService.cs" />
     <Compile Include="Assets/Project/Scripts/UI/UIShake.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Player/PlayerVisualFeedback.cs" />
     <Compile Include="Assets/Project/Scripts/Systems/EnemySpawner.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets/Project/Scripts/Gameplay/Common/HitPunch.cs" />
     <Compile Include="Assets/Project/Scripts/Core/SceneReloader.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Common/HealthHitFeedback.cs" />
+    <Compile Include="Assets/Project/Scripts/Systems/ScreenShake.cs" />
     <Compile Include="Assets/Project/Scripts/Gameplay/Player/PlayerInput.cs" />
     <Compile Include="Assets/Project/Scripts/Core/GameManager.cs" />
     <Compile Include="Assets/Project/Scripts/UI/GameUIController.cs" />

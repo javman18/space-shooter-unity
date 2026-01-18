@@ -25,6 +25,7 @@ namespace SpaceShooter.Core
         [SerializeField] private GameManager gameManager;
         [SerializeField] private GameUIController ui;
         [SerializeField] private PlayerDeathHandler playerDeath;
+        
 
         private IInputProvider _input;
 

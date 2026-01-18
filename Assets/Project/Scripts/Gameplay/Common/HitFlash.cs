@@ -32,10 +32,10 @@ namespace SpaceShooter.Gameplay.Common
             if (sr == null) return;
 
             if (_routine != null) StopCoroutine(_routine);
-            _routine = StartCoroutine(Routine());
+            _routine = StartCoroutine(Routine(duration));
         }
 
-        private IEnumerator Routine()
+        private IEnumerator Routine(float duration)
         {
             sr.color = Color.red;
             yield return new WaitForSeconds(duration);
