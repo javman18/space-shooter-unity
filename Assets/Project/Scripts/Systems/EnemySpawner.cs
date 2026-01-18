@@ -56,10 +56,14 @@ namespace SpaceShooter.Systems
            
             var enemy = go.GetComponent<Enemy>();
             if (enemy != null)
-                enemy.Init(_pool, enemyPrefab, enemyHp, _score);
+                enemy.Init(_pool, enemyPrefab, enemyHp);
             var hitFx = go.GetComponent<HealthHitFeedback>();
             if (hitFx != null)
                 hitFx.SetScoreService(_score);
+
+            var scoreOnDeath = go.GetComponent<ScoreOnDeath>();
+            if (scoreOnDeath != null) scoreOnDeath.SetScoreService(_score);
+
 
         }
     }

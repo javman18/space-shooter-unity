@@ -18,13 +18,10 @@ namespace SpaceShooter.Gameplay.Enemies
 
         [SerializeField] private int scoreValue = 100;
 
-        private FloatingScoreService _score;
-
-        public void Init(PoolService pool, GameObject prefabKey, int hp, FloatingScoreService score)
+        public void Init(PoolService pool, GameObject prefabKey, int hp)
         {
             _pool = pool;
             _prefabKey = prefabKey;
-            _score = score;
 
             if (despawnOnExit != null)
                 despawnOnExit.Init(pool, prefabKey);
@@ -49,7 +46,6 @@ namespace SpaceShooter.Gameplay.Enemies
 
         private void HandleDeath()
         {
-            _score?.Show(scoreValue, transform.position);
             if (_dying) return;
             _dying = true;
 

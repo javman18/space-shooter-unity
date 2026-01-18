@@ -7,16 +7,17 @@ namespace SpaceShooter.Systems
     {
         [SerializeField] private PoolService pool;
         [SerializeField] private GameObject popupPrefab;
+        [SerializeField] private float spread = 0.25f;
 
         public void Show(int amount, Vector3 worldPos)
         {
             if (pool == null || popupPrefab == null) return;
 
-            var go = pool.Spawn(popupPrefab, worldPos, Quaternion.identity);
+            worldPos += (Vector3)Random.insideUnitCircle * spread;
 
+            var go = pool.Spawn(popupPrefab, worldPos, Quaternion.identity);
             var popup = go.GetComponent<FloatingScore>();
-            if (popup != null)
-                popup.Init(pool, popupPrefab, worldPos, amount);
+            popup?.Init(pool, popupPrefab, worldPos, amount);
         }
     }
 }

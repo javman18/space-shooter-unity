@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 6567433274889166522}
   - component: {fileID: 8689027827465538278}
   - component: {fileID: 6068996342387831145}
+  - component: {fileID: 1595110761954023619}
   m_Layer: 0
   m_Name: EnemyBasic
   m_TagString: Untagged
@@ -328,3 +329,18 @@ MonoBehaviour:
   inflateAmount: 1.25
   inflateTime: 0.08
   popDelay: 0.02
+--- !u!114 &1595110761954023619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6558162810854091689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56ee18a8fcbbfd49ae3fabe8c6816bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 5386861782291403748}
+  scoreService: {fileID: 0}
+  scoreConfig: {fileID: 11400000, guid: e4a8daf427343de4fbcc19d2822aca9c, type: 2}
