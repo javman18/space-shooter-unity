@@ -10,10 +10,7 @@ namespace SpaceShooter.Gameplay.Player
 
         public event Action PlayerDied;
 
-        private void Reset()
-        {
-            health = GetComponent<Health>();
-        }
+        private void Reset() => health = GetComponent<Health>();
 
         private void OnEnable()
         {
@@ -25,10 +22,6 @@ namespace SpaceShooter.Gameplay.Player
             if (health != null) health.Died -= HandleDied;
         }
 
-        private void HandleDied()
-        {
-            Debug.Log("Player died");
-            PlayerDied?.Invoke();
-        }
+        private void HandleDied() => PlayerDied?.Invoke();
     }
 }
