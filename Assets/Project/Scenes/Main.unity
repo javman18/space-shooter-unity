@@ -2575,6 +2575,7 @@ GameObject:
   - component: {fileID: 1065579926}
   - component: {fileID: 1065579928}
   - component: {fileID: 1065579929}
+  - component: {fileID: 1065579930}
   m_Layer: 0
   m_Name: HP
   m_TagString: Untagged
@@ -2615,7 +2616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.5137255, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2655,8 +2656,8 @@ MonoBehaviour:
   container: {fileID: 1769457824}
   pillPrefab: {fileID: 3715729261322287310, guid: 80869e591c0d64b5fb3200817d353943, type: 3}
   maxPills: 10
-  onColor: {r: 1, g: 1, b: 1, a: 1}
-  offColor: {r: 1, g: 1, b: 1, a: 0.25}
+  onColor: {r: 0, g: 0.7176471, b: 0.92156863, a: 1}
+  offColor: {r: 0, g: 0.7176471, b: 0.92156863, a: 0.30588236}
 --- !u!114 &1065579929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2670,6 +2671,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1065579925}
+--- !u!114 &1065579930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065579924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1084772674
 GameObject:
   m_ObjectHideFlags: 0
